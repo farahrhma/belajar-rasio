@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belajar Rasio - SMP Kelas 7</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><span class="dot r"></span><span class="dot b"></span> Belajar Rasio</div>
+  <div class="links">
+    <button data-page="home">Beranda</button>
+    <button data-page="materi">Materi</button>
+    <button data-page="simulasi">Simulasi</button>
+    <button data-page="latihan">Latihan</button>
+    <button data-page="kuis">Kuis</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="page active">
+  <h1>Rasio itu perbandingan.<br>Yuk, kita coba sendiri.</h1>
+  <p class="lead">Belajar rasio untuk kelas 7 SMP: baca materi, main simulasi, lalu uji dirimu lewat latihan dan kuis.</p>
+  <div class="row">
+    <button class="btn" data-page="materi">Mulai dari materi</button>
+    <button class="btn ghost" data-page="simulasi">Coba simulasi</button>
+  </div>
+  <div class="demo">
+    <span class="dot r big"></span><span class="dot r big"></span>
+    <span class="dot b big"></span><span class="dot b big"></span><span class="dot b big"></span>
+    <p>2 merah : 3 biru</p>
+  </div>
+</section>
+
+<section id="materi" class="page">
+  <h2>Materi</h2>
+  <p class="lead">Pilih satu bagian. Ringkasannya tampil di bawah, lalu slide lengkapnya bisa kamu baca atau unduh.</p>
+  <div id="materi-menu" class="menu"></div>
+  <div id="materi-isi" class="card"><p>Pilih salah satu bagian materi di atas.</p></div>
+</section>
+
+<section id="simulasi" class="page">
+  <h2>Simulasi: Konsep Rasio</h2>
+  <p class="lead">Geser slider untuk mengubah jumlah bola merah dan biru, lalu lihat rasionya.</p>
+  <div class="card">
+    <label>Bola merah: <b id="n-r">3</b>
+      <input type="range" id="s-r" min="1" max="20" value="3"></label>
+    <label>Bola biru: <b id="n-b">5</b>
+      <input type="range" id="s-b" min="1" max="20" value="5"></label>
+    <div id="bola" class="bola" aria-live="polite"></div>
+    <p class="hasil">Rasio merah : biru = <b id="r-asli">3 : 5</b></p>
+    <p class="hasil">Bentuk paling sederhana = <b id="r-sederhana">3 : 5</b></p>
+    <p id="r-catatan" class="catatan"></p>
+  </div>
+</section>
+
+<section id="latihan" class="page">
+  <h2>Latihan Soal</h2>
+  <p class="lead">Jawaban langsung diperiksa dan dibahas, jadi kamu bisa belajar dari tiap soal.</p>
+  <div id="latihan-box" class="card"></div>
+</section>
+
+<section id="kuis" class="page">
+  <h2>Kuis</h2>
+  <p class="lead">Jawab semua soal, lalu lihat skor akhirmu.</p>
+  <div id="kuis-box" class="card"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
