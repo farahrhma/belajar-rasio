@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Belajar Rasio - SMP Kelas 7</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav class="nav">
+  <div class="brand"><span class="dot r"></span><span class="dot b"></span> Belajar Rasio</div>
+  <div class="links">
+    <button data-page="home">Beranda</button>
+    <button data-page="materi">Materi</button>
+    <button data-page="simulasi">Simulasi</button>
+    <button data-page="latihan">Latihan</button>
+    <button data-page="kuis">Kuis</button>
+  </div>
+</nav>
+
+<main>
+
+<section id="home" class="page active">
+  <h1>Rasio itu perbandingan.<br>Yuk, kita coba sendiri.</h1>
+  <p class="lead">Belajar rasio untuk kelas 7 SMP: baca materi, main simulasi, lalu uji dirimu lewat latihan dan kuis.</p>
+  <div class="row">
+    <button class="btn" data-page="materi">Mulai dari materi</button>
+    <button class="btn ghost" data-page="simulasi">Coba simulasi</button>
+  </div>
+  <div class="demo">
+    <span class="dot r big"></span><span class="dot r big"></span>
+    <span class="dot b big"></span><span class="dot b big"></span><span class="dot b big"></span>
+    <p>2 merah : 3 biru</p>
+  </div>
+</section>
+
+<section id="materi" class="page">
+  <h2>Materi</h2>
+  <p class="lead">Pilih satu bagian. Ringkasannya tampil di bawah, lalu slide lengkapnya bisa kamu baca atau unduh.</p>
+  <div id="materi-menu" class="menu"></div>
+  <div id="materi-isi" class="card"><p>Pilih salah satu bagian materi di atas.</p></div>
+</section>
+
+<section id="simulasi" class="page">
+  <h2>Simulasi</h2>
+  <p class="lead">Pilih satu simulasi, lalu geser slider untuk mencobanya sendiri.</p>
+
+  <div class="menu sim-menu">
+    <button data-sim="1" class="on">1. Konsep Rasio</button>
+    <button data-sim="2">2. Selisih dan Rasio</button>
+    <button data-sim="3">3. Faktor Skala</button>
+    <button data-sim="4">4. Rasio Ekuivalen</button>
+    <button data-sim="5">5. Laju Perubahan</button>
+  </div>
+
+  <div class="card">
+
+    <div id="sim-1" class="sim active">
+      <p>Geser slider untuk mengubah jumlah bola merah dan biru, lalu lihat rasionya.</p>
+      <label>Bola merah: <b id="n-r">3</b>
+        <input type="range" id="s-r" min="1" max="20" value="3"></label>
+      <label>Bola biru: <b id="n-b">5</b>
+        <input type="range" id="s-b" min="1" max="20" value="5"></label>
+      <div id="bola" class="bola" aria-live="polite"></div>
+      <p class="hasil">Rasio merah : biru = <b id="r-asli">3 : 5</b></p>
+      <p class="hasil">Bentuk paling sederhana = <b id="r-sederhana">3 : 5</b></p>
+      <p id="r-catatan" class="catatan"></p>
+    </div>
+
+    <div id="sim-2" class="sim">
+      <p>Dua batang ditambah dengan jumlah yang sama. Perhatikan: selisihnya tetap, tetapi rasionya berubah.</p>
+      <label>Batang A (awal): <b id="a2">4</b>
+        <input type="range" id="s2a" min="1" max="15" value="4"></label>
+      <label>Batang B (awal): <b id="b2">8</b>
+        <input type="range" id="s2b" min="1" max="15" value="8"></label>
+      <label>Keduanya ditambah: <b id="t2">0</b>
+        <input type="range" id="s2t" min="0" max="20" value="0"></label>
+      <div class="batang"><span>A</span><div class="jalur"><div class="bar r" id="bar2a"></div></div><b id="v2a"></b></div>
+      <div class="batang"><span>B</span><div class="jalur"><div class="bar b" id="bar2b"></div></div><b id="v2b"></b></div>
+      <p class="hasil">Selisih: <b id="sel2"></b></p>
+      <p class="hasil">Rasio A : B = <b id="ras2"></b></p>
+      <p id="cat2" class="catatan"></p>
+    </div>
+
+    <div id="sim-3" class="sim">
+      <p>Persegi panjang awal berukuran 4 cm × 3 cm (garis putus-putus). Ubah faktor skalanya.</p>
+      <label>Faktor skala: <b id="k3">1</b>
+        <input type="range" id="s3" min="0.5" max="3" step="0.5" value="1"></label>
+      <div class="kanvas"><div class="rect asli"></div><div class="rect" id="rect3"></div></div>
+      <p class="hasil">Panjang: <b id="p3"></b></p>
+      <p class="hasil">Lebar: <b id="l3"></b></p>
+      <p id="c3" class="catatan"></p>
+    </div>
+
+    <div id="sim-4" class="sim">
+      <p>Kalikan kedua bagian rasio dengan faktor yang sama, maka tabel rasio ekuivalen terisi otomatis.</p>
+      <label>Rasio awal, bagian pertama: <b id="a4">2</b>
+        <input type="range" id="s4a" min="1" max="9" value="2"></label>
+      <label>Rasio awal, bagian kedua: <b id="b4">3</b>
+        <input type="range" id="s4b" min="1" max="9" value="3"></label>
+      <label>Faktor yang disorot: <b id="k4">2</b>
+        <input type="range" id="s4k" min="1" max="6" value="2"></label>
+      <table class="tabel" id="tabel4"></table>
+      <p class="hasil" id="prop4"></p>
+      <p class="catatan">Semua rasio di tabel senilai dengan rasio awal.</p>
+    </div>
+
+    <div id="sim-5" class="sim">
+      <p>Atur laju mobil, lalu tekan Jalankan. Grafik jarak terhadap waktu ikut tergambar.</p>
+      <label>Laju: <b id="v5">40</b> km/jam
+        <input type="range" id="s5" min="10" max="100" step="10" value="40"></label>
+      <div class="jalan"><div class="mobil" id="mobil5"></div></div>
+      <canvas id="grafik5" width="480" height="260" aria-label="Grafik jarak terhadap waktu"></canvas>
+      <button class="btn" id="go5">Jalankan</button>
+      <p class="hasil" id="info5"></p>
+    </div>
+
+  </div>
+</section>
+
+<section id="latihan" class="page">
+  <h2>Latihan Soal</h2>
+  <p class="lead">Jawaban langsung diperiksa dan dibahas, jadi kamu bisa belajar dari tiap soal.</p>
+  <div id="latihan-box" class="card"></div>
+</section>
+
+<section id="kuis" class="page">
+  <h2>Kuis</h2>
+  <p class="lead">Jawab semua soal, lalu lihat skor akhirmu.</p>
+  <div id="kuis-box" class="card"></div>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
